@@ -1,0 +1,63 @@
+# SmartVideoEditor 全局配置文件
+# 修改后无需重启，支持热加载
+
+hardware:
+  cpu_threshold: 70          # CPU 占用上限 %
+  gpu_threshold: 80          # GPU 算力上限 %
+  temp_warning: 70           # 温度预警 ℃
+  temp_critical: 80          # 温度临界 ℃
+  low_vram_limit: 4096       # 低显存阈值 MB
+  monitor_interval: 1.0      # 硬件监控轮询间隔 秒
+
+model:
+  precision: "int4"          # 量化精度 int4 / int8 / fp16
+  device: "auto"             # auto / gpu / cpu
+  batch_size: 1              # 推理批次
+  vl_sample_ratio: 0.1       # 模块一 Qwen-VL 抽样校验比例（0~1）
+
+video:
+  segment_duration: 1.5      # 切片时长 秒
+  merge_gap: 15              # 连续片段合并间隔 秒（模块一）
+  min_clip_duration_fight: 3 # 模块一最小片段时长 秒
+  min_clip_duration_highlight: 4  # 模块二最小片段时长 秒
+  max_resolution: 1080       # 前置压缩分辨率
+  fps_sample: 10             # 抽帧采样帧率
+
+highlight:
+  shot_change_threshold: 30.0   # 镜头切换帧差阈值
+  volume_peak_threshold: 0.6    # 音量峰值阈值（归一化 0~1）
+  face_ratio_threshold: 0.15    # 人脸占比阈值（画面面积比例）
+  weight_audio: 0.4             # 音频维度权重
+  weight_visual: 0.6            # 画面维度权重
+
+fight:
+  x3d_confidence: 0.5        # X3D 打斗概率阈值
+  min_person_count: 2        # 多人判定最小人数
+  person_boost: 0.2          # 多人同框打斗分数加权
+
+cache:
+  path: "./temp_cache"
+  auto_clean: true
+  max_size_gb: 10
+  stale_hours: 24            # 残留文件清理时长
+
+tts:
+  voice: "zh-CN-XiaoxiaoNeural"
+  rate: "+0%"
+  retry_times: 3
+  timeout: 30
+
+shortdrama:
+  llm_model: "qwen2-7b-instruct-int4.gguf"
+  max_script_chars: 800      # 文案最大字数
+  chars_per_second: 4.5      # 配音语速 字/秒（用于音画对齐）
+
+jianying:
+  draft_dir: ""              # 留空则自动检测系统默认目录
+  version: "auto"            # auto / 3.0 / 4.0
+
+logging:
+  level: "INFO"              # DEBUG / INFO / WARNING / ERROR / CRITICAL
+  rotation: "1 day"          # 日志轮转
+  retention: "7 days"        # 日志保留
+  dir: "./logs"

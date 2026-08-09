@@ -1,0 +1,44 @@
+# ============ Python 缓存 ============
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# ============ 虚拟环境 / 便携运行时 ============
+venv/
+.venv/
+env/
+python-embed/
+get-pip.py
+
+# ============ 便携 FFmpeg ============
+ffmpeg/
+
+# ============ 运行时生成数据 ============
+# 单实例文件锁（含进程 PID，不应提交）
+.fireclip.lock
+# 本地数据库
+*.db
+# 日志
+logs/
+*.log
+error_logs/
+# 缓存 / 输出 / 模型
+cache/
+temp_cache/
+output/
+models_cache/
+
+# ============ 打包产物 (PyInstaller) ============
+*.spec
+*.exe
+
+# ============ 编辑器 / 系统 ============
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

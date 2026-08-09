@@ -1,0 +1,35 @@
+# SmartVideoEditor Python 依赖
+# Python 3.10+
+
+# GUI 框架
+PyQt6>=6.6.0
+
+# 视频处理
+av>=12.0.0                  # PyAV FFmpeg 绑定
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# AI 推理
+llama-cpp-python>=0.2.50    # GGUF 大模型推理
+onnxruntime>=1.16.0         # ONNX 视觉模型推理
+ultralytics>=8.1.0         # YOLO 检测
+
+# 音频分析
+librosa>=0.10.0
+pydub>=0.25.1
+soundfile>=0.12.0
+
+# 硬件监控
+psutil>=5.9.0
+pynvml>=11.5.0
+
+# TTS
+edge-tts>=6.1.0
+aiohttp>=3.9.0
+
+# 配置与日志
+PyYAML>=6.0
+loguru>=0.7.0
+
+# 打包
+pyinstaller>=6.0.0
