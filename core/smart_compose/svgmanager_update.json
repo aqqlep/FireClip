@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "notes": "SVG Manager（Tauri 重写版）初始发布版本。",
+  "version": "0.1.3",
+  "notes": "SVG Manager （Tauri 重构版）\n• 分栏拖拽移动 \n• 批量重命名 \n• 主动更新检测（去掉自动联网功能）",
   "quarkId": "7670bd3dcd8c",
   "quarkPwd": "nsqW"
 }
